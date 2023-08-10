@@ -5,7 +5,7 @@ import logImg from './log.jpg';
 import woodImg from './wood.png';
 import logoImg from './Minecraft_Logo.png';
 
-const images = {
+export  {
     dirtImg,
     grassImg,
     glassImg,
@@ -13,5 +13,3 @@ const images = {
     woodImg,
     logoImg,
 }
-
-export default images;
