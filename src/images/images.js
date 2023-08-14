@@ -5,7 +5,7 @@ import logImg from './log.jpg';
 import woodImg from './wood.png';
 import logoImg from './Minecraft_Logo.png';
 
-export  {
+export {
     dirtImg,
     grassImg,
     glassImg,
