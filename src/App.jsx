@@ -1,28 +1,33 @@
-import { Canvas } from '@react-three/fiber';
-import { Sky } from '@react-three/drei';
-import { Physics } from '@react-three/cannon';
-import Ground from './components/Ground.jsx';
-import Player from './components/Player.jsx';
-import FPV from './components/FirstPersonView.jsx';
-import Cubes from './components/Cubes.jsx';
+import { NavLink } from "react-router-dom";
+import './index.css'
 
 function App() {
+    const navigationArray = [
+        {
+            path: '',
+            name: 'Home',
 
-  return (
-    <>
-      <Canvas>
-        <Sky sunPosition={[100, 100, 20]} />
-        <ambientLight intensity={0.5} />
-        <FPV />
-        <Physics>
-          <Player />
-          <Cubes />
-          <Ground />
-        </Physics>
-      </Canvas>
-      <div className='absolute centered cursor'>+</div>
-    </>
-  )
+        },
+        {
+            path: 'minecraft',
+            name: 'Minecraft',
+        },
+    ];
+
+    const navigationMap = navigationArray.map((pathObject, index) => {
+        return <li key={index}> <NavLink to={`/${pathObject.path}`}>{pathObject.name}</NavLink> </li>
+    })
+
+
+    return (
+        <>
+            <nav className="navBar">
+                <ul>
+                    {navigationMap}
+                </ul>
+            </nav>
+        </>
+    )
 }
 
 export default App
